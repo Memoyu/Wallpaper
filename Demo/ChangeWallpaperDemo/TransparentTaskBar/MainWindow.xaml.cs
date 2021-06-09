@@ -65,7 +65,7 @@ namespace TransparentTaskBar
             }
             else if (msg == WM_DWMCOLORIZATIONCOLORCHANGED)
             {
-                // 切换
+                // 切换Windows颜色时进入该处理
             }
 
             return IntPtr.Zero;
@@ -95,6 +95,7 @@ namespace TransparentTaskBar
             taskbar.AccentPolicy.GradientColor = GetTaskbarColor(alpha);
             otherTaskbar.AccentPolicy.GradientColor = GetTaskbarColor(alpha);
         }
+
         public static Int32 GetTaskbarColor(byte alpha)
         {
             UpdateColor();
