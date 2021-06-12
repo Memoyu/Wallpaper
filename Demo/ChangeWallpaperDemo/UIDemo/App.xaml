@@ -6,6 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/UIDemo;component/Styles/Home.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <Style x:Key="Icon" TargetType="{x:Type TextBlock}">
                 <!--<Setter Property="FontFamily" Value="/UIDemo;component/Resources/#iconfont" />-->
