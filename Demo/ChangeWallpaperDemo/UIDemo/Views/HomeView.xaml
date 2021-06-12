@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="UIDemo.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cc="clr-namespace:UIDemo.Controls.Panels"
+             xmlns:local="clr-namespace:UIDemo.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <cc:SimplePanel>
+        <StackPanel VerticalAlignment="Top" ZIndex="99" Height="90"  Background="Black" >
+            <DockPanel Margin="0,0,0,10">
+                <Label DockPanel.Dock="Left"  FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    Wallpaper
+                </Label>
+                <StackPanel DockPanel.Dock="Right"  FlowDirection="RightToLeft" Orientation="Horizontal" Height="25"  VerticalAlignment="Bottom">
+                    <TextBlock Text="&#xe611;" Style="{StaticResource Icon}" Foreground="White" Margin="10,0"></TextBlock>
+                    <TextBlock Text="&#xe61a;" Style="{StaticResource Icon}" Foreground="White"></TextBlock>
+                </StackPanel>
+            </DockPanel>
+            <UniformGrid Columns="2">
+                <TextBlock Foreground="White" HorizontalAlignment="Center">最新</TextBlock>
+                <TextBlock Foreground="White" HorizontalAlignment="Center">热门</TextBlock>
+            </UniformGrid>
+        </StackPanel>
+
+        <Grid x:Name="Wallpapers" >
+
+            <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                      Background="Transparent"
+                      BorderThickness="0"
+                      Cursor="Hand"
+                      Name="FriendList"
+                      ItemsSource="{Binding ImagePreviews}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <cc:SimplePanel Height="160" Background="Aqua">
+                            <Grid>
+                                <Image Stretch="UniformToFill"  Source="{Binding PreviewUrl}" />
+                            </Grid>
+                        </cc:SimplePanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20">
+            <Ellipse Fill="Black" Cursor="Hand" 
+                     Width="30"
+                 Height="30">
+            </Ellipse>
+            <TextBlock Text="&#xe604;" Style="{StaticResource Icon}" Foreground="White"></TextBlock>
+        </Grid>
+    </cc:SimplePanel>
+</UserControl>
