@@ -4,9 +4,26 @@
                     xmlns:local="clr-namespace:UIDemo"
                     xmlns:cs="clr-namespace:UIDemo.Styles"
                     xmlns:cc="clr-namespace:UIDemo.Controls.Panels">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/UIDemo;component/Styles/BaseStyle.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
 
     <SolidColorBrush o:Freeze="True" x:Key="PrimaryBrush" Color="Blue"/>
     <SolidColorBrush o:Freeze="True" x:Key="BorderBrush" Color="{DynamicResource BorderColor}"/>
+
+    <Style x:Key="IconButton" TargetType="Button">
+        <Setter Property="cs:VisualElement.IconCode" Value=""/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <TextBlock Text="{Binding Path=(cs:VisualElement.IconCode),RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource Icon}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 
     <Style x:Key="SelectButton" TargetType="RadioButton">
         <Setter Property="FontSize" Value="13"/>

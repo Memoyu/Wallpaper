@@ -1,0 +1,22 @@
+﻿<Border x:Class="UIDemo.Controls.Navigations.Navigation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UIDemo.Controls.Navigations"
+             xmlns:cc="clr-namespace:UIDemo.Controls.Panels"
+             xmlns:cs="clr-namespace:UIDemo.Styles">
+    <cc:SimplePanel>
+        <Border Background="Black" BorderBrush="Black"  CornerRadius="7,7,0,0" >
+            <cc:SimplePanel MinHeight="30" MinWidth="100" Margin="15,0">
+                <Button Style="{StaticResource IconButton}" cs:VisualElement.IconCode="&#xe659;" HorizontalAlignment="Left" Command="{Binding GoBackCommand}" />
+                <TextBlock Style="{StaticResource TextBlockBaseStyle}"  Text="{Binding ContentTitle}" />
+                <!--<Border HorizontalAlignment="Right">
+                    <DockPanel>
+                        <ContentPresenter Name="PresenterMain" Content="{Binding SubContent}"/>
+                    </DockPanel>
+                </Border>-->
+            </cc:SimplePanel>
+        </Border>
+    </cc:SimplePanel>
+</Border>

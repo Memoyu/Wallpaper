@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:cc="clr-namespace:UIDemo.Controls.Panels"
              xmlns:local="clr-namespace:UIDemo.Views"
+             xmlns:cs="clr-namespace:UIDemo.Styles"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <cc:SimplePanel>
@@ -14,8 +15,8 @@
                     Wallpaper
                 </Label>
                 <StackPanel DockPanel.Dock="Right"  FlowDirection="RightToLeft" Orientation="Horizontal" Height="25"  VerticalAlignment="Bottom">
-                    <TextBlock Text="&#xe611;" Style="{StaticResource Icon}" Foreground="White" Margin="10,0"></TextBlock>
-                    <TextBlock Text="&#xe61a;" Style="{StaticResource Icon}" Foreground="White"></TextBlock>
+                    <Button Style="{StaticResource IconButton}" Margin="10,0" cs:VisualElement.IconCode="&#xe611;" Command="{Binding GoSettingCommand}" />
+                    <Button Style="{StaticResource IconButton}" cs:VisualElement.IconCode="&#xe61a;" Command="{Binding GoSettingCommand }"/>
                 </StackPanel>
             </DockPanel>
             <UniformGrid Columns="2">

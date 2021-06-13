@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Microsoft.Toolkit.Mvvm.Input;
+using Prism.Events;
 using Prism.Mvvm;
 using UIDemo.Model;
 
@@ -10,9 +8,23 @@ namespace UIDemo.ViewModels
 {
     public class HomeViewModel : BindableBase
     {
+        #region 属性
         public List<ImagePreviewModel> ImagePreviews { get; set; }
+        #endregion
 
-        public HomeViewModel()
+        #region Command
+
+        /// <summary>
+        /// 跳转新页面
+        /// </summary>
+        public RelayCommand GoSettingCommand { get; private set; }
+        public RelayCommand GoHistoryCommand { get; private set; }
+
+        #endregion
+
+        private readonly IEventAggregator _eventAggregator;
+
+        public HomeViewModel(IEventAggregator eventAggregator)
         {
             ImagePreviews = new List<ImagePreviewModel>
             {
@@ -47,6 +59,15 @@ namespace UIDemo.ViewModels
                     PreviewUrl = "/Resources/unsplash2.jpg"
                 }
             };
+            GoSettingCommand = new RelayCommand(()=> GoPage("SettingView"));
+            GoHistoryCommand = new RelayCommand(() => GoPage("HistoryView"));
+            _eventAggregator = eventAggregator;
+            
+        }
+
+        private void GoPage(string pageNam)
+        {
+            _eventAggregator.GetEvent<GoPageEvent>().Publish(pageNam);
         }
     }
 }

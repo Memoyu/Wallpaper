@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Prism.Events;
 using Prism.Ioc;
 using Prism.Regions;
 using UIDemo.Model;
@@ -13,9 +14,12 @@ namespace UIDemo.ViewModels
     public class MainViewModel : BindableBase
     {
         private readonly IRegionManager regionManager;
-        public MainViewModel(IContainerProvider containerProvider)
+        private IRegionNavigationJournal _navigationJournal;
+
+        public MainViewModel(IContainerProvider containerProvider, IEventAggregator eventAggregator)
         {
             regionManager = containerProvider.Resolve<IRegionManager>();
+            eventAggregator.GetEvent<GoPageEvent>().Subscribe(OpenPage);
         }
 
         /// <summary>
@@ -26,12 +30,19 @@ namespace UIDemo.ViewModels
         public void OpenPage(string pageName)
         {
             if (string.IsNullOrWhiteSpace(pageName)) return;
-
-            var region = regionManager.Regions["MainContent"];
-            region.RequestNavigate(pageName, arg =>
+            if (pageName.Equals("GoBack"))
             {
-                //..
-            });
+                _navigationJournal.GoBack();
+            }
+            else
+            {
+                var region = regionManager.Regions["MainContent"];
+                region.RequestNavigate(pageName, arg =>
+                {
+                    _navigationJournal = arg.Context.NavigationService.Journal;
+                });
+            }
+           
         }
     }
 }

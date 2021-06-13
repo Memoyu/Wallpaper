@@ -6,16 +6,9 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/UIDemo;component/Styles/BaseStyle.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/UIDemo;component/Styles/Home.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            <Style x:Key="Icon" TargetType="{x:Type TextBlock}">
-                <!--<Setter Property="FontFamily" Value="/UIDemo;component/Resources/#iconfont" />-->
-                <Setter Property="FontFamily" Value="pack://application:,,,/UIDemo;component/Resources/#IconFont"></Setter>
-                <Setter Property="TextAlignment" Value="Center"/>
-                <Setter Property="HorizontalAlignment" Value="Center"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="FontSize" Value="20"/>
-            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

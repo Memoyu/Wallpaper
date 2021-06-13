@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,5 +19,15 @@ namespace UIDemo.Styles
 
         public static Brush GetHighlightBrush(DependencyObject element)
             => (Brush)element.GetValue(HighlightBrushProperty);
+
+
+        public static readonly DependencyProperty IconCodeProperty = DependencyProperty.RegisterAttached(
+            "IconCode", typeof(string), typeof(VisualElement), new FrameworkPropertyMetadata(default(string), FrameworkPropertyMetadataOptions.None));
+
+        public static void SetIconCode(DependencyObject element, string value)
+            => element.SetValue(IconCodeProperty, value);
+
+        public static string GetIconCode(DependencyObject element)
+            => (string)element.GetValue(IconCodeProperty);
     }
 }
