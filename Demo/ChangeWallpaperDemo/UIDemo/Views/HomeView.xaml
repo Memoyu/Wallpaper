@@ -8,15 +8,29 @@
              xmlns:cs="clr-namespace:UIDemo.Styles"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Storyboard x:Key="FadeIn">
+            <DoubleAnimation 
+                Storyboard.TargetProperty="Opacity" 
+                Duration="0:0:2" From="0" To="1"/>
+        </Storyboard>
+        <Style TargetType="Panel" x:Key="FadingLabel">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard Storyboard="{StaticResource FadeIn}"/>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
     <cc:SimplePanel>
-        <StackPanel VerticalAlignment="Top" ZIndex="99" Height="100" >
-            <DockPanel Margin="0,0,0,15">
+        <StackPanel VerticalAlignment="Top" ZIndex="99" Height="95">
+            <DockPanel Margin="10,10,0,5">
                 <Label DockPanel.Dock="Left"  FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" >
                     Wallpaper
                 </Label>
                 <StackPanel DockPanel.Dock="Right"  FlowDirection="RightToLeft" Orientation="Horizontal" Height="25"  VerticalAlignment="Bottom">
                     <Button Style="{StaticResource IconButton}" Margin="10,0" cs:VisualElement.IconCode="&#xe611;" Command="{Binding GoSettingCommand}" />
-                    <Button Style="{StaticResource IconButton}" cs:VisualElement.IconCode="&#xe61a;" Command="{Binding GoSettingCommand }"/>
+                    <Button Style="{StaticResource IconButton}" cs:VisualElement.IconCode="&#xe61a;" Command="{Binding GoHistoryCommand }"/>
                 </StackPanel>
             </DockPanel>
             <UniformGrid Columns="2">
@@ -39,7 +53,7 @@
                 </ListView.Resources>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <cc:SimplePanel Height="160" Background="Aqua">
+                        <cc:SimplePanel Height="160" Background="Aqua" Style="{StaticResource FadingLabel}">
                             <Grid>
                                 <Image Stretch="UniformToFill"  Source="{Binding PreviewUrl}" />
                             </Grid>

@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/UIDemo;component/Styles/BaseStyle.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/UIDemo;component/Styles/Home.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/UIDemo;component/Controls/Navigation/TopNav.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -7,10 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controls\Navigation\TopNav1.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\iconfont.ttf" />
     <None Remove="Resources\unsplash.jpg" />
     <None Remove="Resources\unsplash1.jpg" />
     <None Remove="Resources\unsplash2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Controls\Navigation\TopNav1.xaml" />
   </ItemGroup>
 
   <ItemGroup>

@@ -7,7 +7,7 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:UIDemo"
         mc:Ignorable="d"
-        Title="MainWindow" WindowChrome.WindowChrome="{DynamicResource WindowChromeKey}" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Topmost="True" Background="#00FFFFFF" Height="600" Width="290">
+        Title="MainWindow" WindowChrome.WindowChrome="{DynamicResource WindowChromeKey}" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Topmost="True" Background="#00FFFFFF" Height="650" Width="290">
     <Window.Resources>
         <WindowChrome x:Key="WindowChromeKey">
             <WindowChrome.ResizeBorderThickness>

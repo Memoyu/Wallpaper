@@ -9,7 +9,7 @@ namespace UIDemo.ViewModels
     public class SettingViewModel : BindableBase
     {
         public string Title { get; } = "首页";
-        public RelayCommand GoBackCommand { get; private set; }
+        public RelayCommand GoBackCommand { get; }
 
         public SettingViewModel(IEventAggregator eventAggregator)
         {
