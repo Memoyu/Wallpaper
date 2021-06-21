@@ -38,7 +38,7 @@
 
 ## Preview
 
-![Preview]()
+![Preview](https://raw.githubusercontent.com/Memoyu/Wallpaper/main/docs/images/preview.png)
 
 &nbsp;
 
