@@ -7,10 +7,11 @@
     </br>
     </br>
      <span  align="center">
- 	 	自动壁纸切换（美化桌面）
+ 	 	Windows桌面美化工具
      </span>
 </h1>
 <div align="center">
+
 
 
 > 知行合一
@@ -22,7 +23,7 @@
 
 ## 项目介绍
 
-基于WPF实现简单美化桌面程序，目标是能调整任务栏透明度（Win10），定时切换壁纸（壁纸自定义或Unsplash获取）等，类似于Mac下的Pap.er程序。
+基于WPF实现简单桌面美化程序，目标是能调整任务栏透明度（Win10），定时切换壁纸（壁纸自定义或Unsplash获取）等，类似于Mac下的Pap.er程序。
 
 &nbsp;
 
